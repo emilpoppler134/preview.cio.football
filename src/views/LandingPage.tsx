@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { FC, useRef, useState } from "react";
+import { API_ADDRESS } from "../config";
 import { useVisitorTracking } from "../hooks/useVisitorTracking";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,21 +51,21 @@ const LandingPage: FC = () => {
     setLoading(true);
 
     try {
-      // const response = await fetch(`${API_ADDRESS}/email/signup`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({ email }),
-      // });
+      const response = await fetch(`${API_ADDRESS}/email/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
-      // const data = await response.json();
+      const data = await response.json();
 
-      // if (!data.success) {
-      //   setError(data.error);
-      //   setLoading(false);
-      //   return;
-      // }
+      if (!data.success) {
+        setError(data.error);
+        setLoading(false);
+        return;
+      }
 
       setError(null);
       setLoading(false);
