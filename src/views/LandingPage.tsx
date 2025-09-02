@@ -309,7 +309,7 @@ const LandingPage: FC = () => {
                 </div>
               </a>
               <a
-                href="https://www.instagram.com/cio.football"
+                href="https://www.facebook.com/cio.football/"
                 className="p-1 text-sm/6 font-medium text-slate-300 hover:text-white transition-colors duration-100 ease-in-out"
               >
                 <div className="flex items-center gap-x-1">
@@ -325,7 +325,7 @@ const LandingPage: FC = () => {
                 </div>
               </a>
               <a
-                href="https://www.instagram.com/cio.football"
+                href="https://www.tiktok.com/@cio.football"
                 className="p-1 text-sm/6 font-medium text-slate-300 hover:text-white transition-colors duration-100 ease-in-out"
               >
                 <div className="flex items-center gap-x-1">
