@@ -6,10 +6,20 @@ export default defineConfig({
   preview: {
     host: "0.0.0.0",
     port: 4173,
-    allowedHosts: ["cio.football", "localhost", "127.0.0.1"],
+    allowedHosts: [
+      "cio.football",
+      "www.cio.football",
+      "localhost",
+      "127.0.0.1",
+    ],
   },
   server: {
     host: "0.0.0.0",
-    allowedHosts: ["cio.football", "localhost", "127.0.0.1"],
+    allowedHosts: [
+      "cio.football",
+      "www.cio.football",
+      "localhost",
+      "127.0.0.1",
+    ],
   },
 });
