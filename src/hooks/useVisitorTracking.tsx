@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_ADDRESS } from "../config";
 
 interface VisitorResponse {
   success: boolean;
@@ -10,9 +11,7 @@ interface VisitorResponse {
   message: string;
 }
 
-export const useVisitorTracking = (
-  serverUrl: string = "http://api.cio.football",
-) => {
+export const useVisitorTracking = () => {
   const [trackingStatus, setTrackingStatus] = useState<{
     isTracked: boolean;
     isNewVisitor: boolean;
@@ -26,7 +25,7 @@ export const useVisitorTracking = (
   useEffect(() => {
     const trackVisitor = async () => {
       try {
-        const response = await fetch(`${serverUrl}/visitors/track`, {
+        const response = await fetch(`${API_ADDRESS}/visitors/track`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +58,7 @@ export const useVisitorTracking = (
     };
 
     trackVisitor();
-  }, [serverUrl]);
+  }, []);
 
   return trackingStatus;
 };
